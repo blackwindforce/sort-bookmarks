@@ -7,7 +7,6 @@ chrome.bookmarks.getSubTree("1").then(([x]) =>
             .toSorted(
               (x, y) =>
                 new URL(x.url).origin.localeCompare(new URL(y.url).origin) ||
-                x.title.replace(/\D/g, "") - y.title.replace(/\D/g, "") ||
                 x.title.localeCompare(y.title)
             )
             .reduce(
